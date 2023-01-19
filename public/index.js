@@ -21,4 +21,4 @@
 // const auth = getAuth(app);
 // const db = getFirestore(app);
 
-console.log('hello from index.js')
+console.log('Hello World! (index.js)')
