@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "firebase": "^9.15.0"
+  },
+  "name": "triviaapp",
+  "version": "1.0.0",
+  "description": "Trivia App",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack --mode=development"
+  },
+  "keywords": [
+    "Trivia"
+  ],
+  "author": "Laser Quail",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
