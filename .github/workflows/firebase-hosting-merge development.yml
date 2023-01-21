@@ -17,4 +17,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SPOTLIGHT_TRIVIA_APP }}'
           channelId: preview
-          projectId: spotlight-trivia-app-preview
+          projectId: spotlight-trivia-app
