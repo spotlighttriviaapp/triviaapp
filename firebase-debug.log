@@ -1,0 +1,57 @@
+[debug] [2023-01-21T23:40:58.335Z] ----------------------------------------------------------------------
+[debug] [2023-01-21T23:40:58.336Z] Command:       /opt/homebrew/Cellar/node/18.8.0/bin/node /opt/homebrew/bin/firebase init hosting:github
+[debug] [2023-01-21T23:40:58.337Z] CLI Version:   11.21.0
+[debug] [2023-01-21T23:40:58.337Z] Platform:      darwin
+[debug] [2023-01-21T23:40:58.337Z] Node Version:  v18.8.0
+[debug] [2023-01-21T23:40:58.337Z] Time:          Sat Jan 21 2023 18:40:58 GMT-0500 (Eastern Standard Time)
+[debug] [2023-01-21T23:40:58.337Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-21T23:40:58.370Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-01-21T23:40:58.370Z] > authorizing via signed-in user (evancnavarro@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/evancnavarro/Documents/GitHub/triviaapp
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-01-21T23:40:58.372Z] Using project from CLI flag: spotlight-trivia-app
+[debug] [2023-01-21T23:40:58.373Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/spotlight-trivia-app [none]
+[debug] [2023-01-21T23:40:58.754Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/spotlight-trivia-app 200
+[debug] [2023-01-21T23:40:58.754Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/spotlight-trivia-app {"projectId":"spotlight-trivia-app","projectNumber":"575723277238","displayName":"trivia-app","name":"projects/spotlight-trivia-app","resources":{"hostingSite":"spotlight-trivia-app","realtimeDatabaseInstance":"spotlight-trivia-app-default-rtdb"},"state":"ACTIVE","etag":"1_8d0edeeb-e5dd-48e0-b234-54ed8fe73c3c"}
+[info] i  Using project spotlight-trivia-app (trivia-app) 
+[info] 
+=== Hosting:github Setup
+[info] 
+[info] i  Detected a .git folder at /Users/evancnavarro/Documents/GitHub/triviaapp 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=617930815&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-01-21T23:40:59.108Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2023-01-21T23:40:59.108Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2023-01-21T23:40:59.429Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2023-01-21T23:40:59.429Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2023-01-21T23:40:59.433Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2023-01-21T23:40:59.708Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2023-01-21T23:40:59.708Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"EvanCNavarro","id":61068414,"node_id":"MDQ6VXNlcjYxMDY4NDE0","avatar_url":"https://avatars.githubusercontent.com/u/61068414?v=4","gravatar_id":"","url":"https://api.github.com/users/EvanCNavarro","html_url":"https://github.com/EvanCNavarro","followers_url":"https://api.github.com/users/EvanCNavarro/followers","following_url":"https://api.github.com/users/EvanCNavarro/following{/other_user}","gists_url":"https://api.github.com/users/EvanCNavarro/gists{/gist_id}","starred_url":"https://api.github.com/users/EvanCNavarro/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/EvanCNavarro/subscriptions","organizations_url":"https://api.github.com/users/EvanCNavarro/orgs","repos_url":"https://api.github.com/users/EvanCNavarro/repos","events_url":"https://api.github.com/users/EvanCNavarro/events{/privacy}","received_events_url":"https://api.github.com/users/EvanCNavarro/received_events","type":"User","site_admin":false,"name":"Evan C. Navarro","company":"User Design One","blog":"https://ecn.dev/","location":"Orlando, FL, USA","email":"hey@ecn.dev","hireable":true,"bio":"Design, Development, & Kombucha.\r\n@EvanCNavarro → https://y.at/👋🤓💻","twitter_username":"EvanCNavarro","public_repos":5,"public_gists":0,"followers":17,"following":40,"created_at":"2020-02-14T22:35:08Z","updated_at":"2023-01-08T01:38:40Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":394750,"collaborators":0,"two_factor_authentication":true,"plan":{"name":"pro","space":976562499,"collaborators":0,"private_repos":9999}}
+[info] 
+[info] ✔  Success! Logged into GitHub as EvanCNavarro 
+[info] 
