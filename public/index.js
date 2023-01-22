@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs, doc, setDoc } from "firebase/firestore";
-import { } from "papaparse.min.js";
+import { parse } from "papaparse";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -38,7 +38,7 @@ function ingest() {
     const fs = require('fs');
     const myCSV = fs.readFileSync("./triviaQuestionsTest.csv");
     var count = 0;
-    papa.parse(myCSV, {
+    parse(myCSV, {
         worker: true,
         step: function(result) {
             // do stuff with the result
