@@ -50,6 +50,7 @@ function ingest() {
     // });
 
     setDoc(myDocument, myDocumentBody);
+    console.log('Added document!');
 };
 
 for (var i = 0; i < myButtons.length; i++) {
