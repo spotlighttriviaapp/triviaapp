@@ -32,7 +32,7 @@ var myDocumentBody = {
 
 var myButtons = document.getElementsByClassName("btn");
 
-var success = function ingest() {
+function ingest() {
     setDoc(myDocument, myDocumentBody);
 };
 
