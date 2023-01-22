@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "webpack --mode=development",
+    "build": "next build --mode=development",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && npm run format",
