@@ -3,19 +3,13 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "./src/pages/",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "cleanUrls": true,
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    "cleanUrls": true
   },
   "emulators": {
     "firestore": {
