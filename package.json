@@ -1,13 +1,14 @@
 {
-  "name": "ts-nextjs-tailwind-starter",
-  "version": "0.1.0",
+  "name": "triviaapp",
+  "version": "1.0.0",
+  "description": "Trivia App",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix && yarn format",
+    "lint:fix": "eslint src --fix && npm run format",
     "lint:strict": "eslint --max-warnings=0 src",
     "typecheck": "tsc --noEmit --incremental false",
     "test:watch": "jest --watch",
@@ -59,5 +60,8 @@
     "**/*.{json,css,scss,md,webmanifest}": [
       "prettier -w"
     ]
-  }
+  },
+  "keywords": [
+    "Trivia"
+  ]
 }
