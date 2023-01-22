@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build",
-    "start": "npm run start",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && npm run format",
     "lint:strict": "eslint --max-warnings=0 src",
