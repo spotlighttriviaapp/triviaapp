@@ -23,7 +23,6 @@ const db = getFirestore(app);
 
 console.log('Hello World! (index.js)');
 
-
 myDocument = doc(db, "questions", "documentID?");
 
 myDocumentBody = {
@@ -31,6 +30,12 @@ myDocumentBody = {
     answer: "2"
 };
 
-function ingest() {
+var myButtons = document.getElementsByClassName("btn");
+
+var success = function ingest() {
     setDoc(myDocument, myDocumentBody);
 };
+
+for (var i = 0; i < myButtons.length; i++) {
+    myButtons[i].addEventListener('click', ingest, false);
+}
