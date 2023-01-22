@@ -4,7 +4,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs, doc, setDoc } from "firebase/firestore";
 import * as Papa from "papaparse";
-import fs from 'fs';
+// import fs from 'fs';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -36,20 +36,20 @@ var myButtons = document.getElementsByClassName("btn");
 
 function ingest() {
     // Convert csv into json
-    const myCSV = fs.readFileSync("./triviaQuestionsTest.csv");
-    var count = 0;
-    Papa.parse(myCSV, {
-        worker: true,
-        step: function(result) {
-            // do stuff with the result
-            console.log(result);
-        },
-        complete: function(results, file) {
-            console.log('parsing complete read', count, 'records.');
-        }
-    });
+    // const myCSV = fs.readFileSync("./triviaQuestionsTest.csv");
+    // var count = 0;
+    // Papa.parse(myCSV, {
+    //     worker: true,
+    //     step: function(result) {
+    //         // do stuff with the result
+    //         console.log(result);
+    //     },
+    //     complete: function(results, file) {
+    //         console.log('parsing complete read', count, 'records.');
+    //     }
+    // });
 
-    // setDoc(myDocument, myDocumentBody);
+    setDoc(myDocument, myDocumentBody);
 };
 
 for (var i = 0; i < myButtons.length; i++) {
