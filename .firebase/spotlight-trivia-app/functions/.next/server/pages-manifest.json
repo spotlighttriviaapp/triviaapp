@@ -1,9 +1,9 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/404": "pages/404.html",
-  "/api/hello": "pages/api/hello.js",
   "/_document": "pages/_document.js",
+  "/api/hello": "pages/api/hello.js",
+  "/components": "pages/components.html",
   "/": "pages/index.html",
-  "/components": "pages/components.html"
+  "/404": "pages/404.html"
 }
