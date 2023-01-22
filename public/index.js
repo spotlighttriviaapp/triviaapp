@@ -3,7 +3,8 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs, doc, setDoc } from "firebase/firestore";
-import { parse } from "papaparse";
+import * as Papa from "papaparse";
+import fs from 'fs';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -35,10 +36,9 @@ var myButtons = document.getElementsByClassName("btn");
 
 function ingest() {
     // Convert csv into json
-    const fs = require('fs');
     const myCSV = fs.readFileSync("./triviaQuestionsTest.csv");
     var count = 0;
-    parse(myCSV, {
+    Papa.parse(myCSV, {
         worker: true,
         step: function(result) {
             // do stuff with the result
