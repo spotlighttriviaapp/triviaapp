@@ -1,6 +1,14 @@
 const path = require('path');
 
 module.exports = {
+  // This allows for top level awaits
+  webpack: {
+    configure: {
+      experiments: {
+        topLevelAwait: true,
+      },
+    },
+  },
   // The entry point file described above
   entry: './public/index.js',
   // The location of the build folder described above
