@@ -1,9 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs, doc, setDoc, addDoc } from "firebase/firestore";
-
 
 const allQuestions = [
     {
@@ -134,7 +133,6 @@ const allQuestions = [
     }
 ];
 
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAu7mDdg8SoY5DXQwcks5Q_le_aw2bEJ48",
@@ -152,16 +150,7 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-console.log('Hello World! (index.js)');
-
 for (var i = 0; i < allQuestions.length; i++) {
+    addDoc(collection(db, "questions"), allQuestions[i]);
     console.log(allQuestions[i]);
 };
-
-// const docRef = await addDoc(collection(db, "questions"), {
-//     question: "What is 1 + 1?",
-//     answer: "2"
-// });
-
-// console.log("Document written with ID: ", docRef.id);
-
