@@ -2,12 +2,10 @@ const path = require('path');
 
 module.exports = {
   // This allows for top level awaits
-  webpack: {
-    configure: {
-      experiments: {
-        topLevelAwait: true,
-      },
-    },
+  experimental: { appDir: true },
+  webpack(config) {
+    config.experiments = { ...config.experiments, topLevelAwait: true }
+    return config
   },
   // The entry point file described above
   entry: './public/index.js',
@@ -20,3 +18,12 @@ module.exports = {
   // map the built code back to the original source format when debugging.
   devtool: 'eval-source-map',
 };
+
+/** @type {import("next").NextConfig} */
+module.exports = {
+  experimental: { appDir: true },
+  webpack(config) {
+    config.experiments = { ...config.experiments, topLevelAwait: true }
+    return config
+  },
+}
