@@ -1,4 +1,4 @@
-const allQuestions = [
+allQuestions = [
     {
       "Category": "Q&A",
       "Sub Category": "Fashion",
