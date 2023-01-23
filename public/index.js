@@ -26626,6 +26626,6 @@ const db = getFirestore(app);
 
 for (var i = 0; i < allQuestions.length; i++) {
     await addDoc(collection(db, "questions"), allQuestions[i]);
-    myCounter = document.getElementsByClassName('counter').innerHTML = (i + 1);
+    document.getElementsByClassName('counter').innerHTML = (i + 1);
     // console.log(allQuestions[i]);
 };
