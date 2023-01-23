@@ -24,7 +24,7 @@ const db = getFirestore(app);
 
 console.log('Hello World! (index.js)');
 
-for (var i = 0; i < allQuestions.length; i++) {
+for (var i = 0; i < allQuestions.length(); i++) {
     console.log(allQuestions[i]);
 };
 
