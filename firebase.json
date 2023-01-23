@@ -4,6 +4,44 @@
   },
   "hosting": {
     "public": "public",
+    "rewrites": [
+      {
+        "source": "**/**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "functions": {
+    "source": ".",
+    "ignore": [
+      ".firebase/**",
+      ".firebaserc",
+      "firebase.json",
+      "**/node_modules/**",
+      "**/public/**"
+    ],
+    "cleanUrls": true
+  },
+  "emulators": {
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}
+
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
