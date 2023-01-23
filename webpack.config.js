@@ -12,12 +12,3 @@ module.exports = {
   // map the built code back to the original source format when debugging.
   devtool: 'eval-source-map',
 };
-
-/** @type {import("next").NextConfig} */
-module.exports = {
-  experimental: { appDir: true },
-  webpack(config) {
-    config.experiments = { ...config.experiments, topLevelAwait: true }
-    return config
-  },
-}
