@@ -25,7 +25,7 @@ const db = getFirestore(app);
 
 console.log('Hello World! (index.js)');
 
-var myDocument = doc(db);
+var myDocument = doc(db, "questions", "");
 
 var myDocumentBody = {
     question: "What is 1 + 1?",
