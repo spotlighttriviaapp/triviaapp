@@ -151,6 +151,6 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 for (var i = 0; i < allQuestions.length; i++) {
-    addDoc(collection(db, "questions"), allQuestions[i]);
+    await addDoc(collection(db, "questions"), allQuestions[i]);
     console.log(allQuestions[i]);
 };
