@@ -25,37 +25,30 @@ const db = getFirestore(app);
 
 console.log('Hello World! (index.js)');
 
-// var myDocument = doc(db, "questions", "q1");
+var myButtons = document.getElementsByClassName("btn");
 
-// var myDocumentBody = {
-//     question: "What is 1 + 1?",
-//     answer: "2"
-// };
+function ingest() {
+    // Convert csv into json
+    const myCSV = fs.readFileSync("./triviaQuestionsTest.csv");
+    var count = 0;
+    Papa.parse(myCSV, {
+        worker: true,
+        step: function(result) {
+            // do stuff with the result
+            console.log(result);
+        },
+        complete: function(results, file) {
+            console.log('parsing complete read', count, 'records.');
+        }
+    });
 
-// var myButtons = document.getElementsByClassName("btn");
+    setDoc(myDocument, myDocumentBody);
+    console.log('Added document!');
+};
 
-// function ingest() {
-//     // Convert csv into json
-//     const myCSV = fs.readFileSync("./triviaQuestionsTest.csv");
-//     var count = 0;
-//     Papa.parse(myCSV, {
-//         worker: true,
-//         step: function(result) {
-//             // do stuff with the result
-//             console.log(result);
-//         },
-//         complete: function(results, file) {
-//             console.log('parsing complete read', count, 'records.');
-//         }
-//     });
-
-//     setDoc(myDocument, myDocumentBody);
-//     console.log('Added document!');
-// };
-
-// for (var i = 0; i < myButtons.length; i++) {
-//     myButtons[i].addEventListener('click', ingest, false);
-// }
+for (var i = 0; i < myButtons.length; i++) {
+    myButtons[i].addEventListener('click', ingest, false);
+}
 
 const docRef = await addDoc(collection(db, "questions"), {
     question: "What is 1 + 1?",
