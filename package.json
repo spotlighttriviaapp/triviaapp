@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "firebase": "^9.15.0",
-    "fs": "^0.0.1-security",
-    "papaparse": "^5.3.2"
+    "firebase": "^9.15.0"
   },
   "name": "triviaapp",
   "version": "1.0.0",

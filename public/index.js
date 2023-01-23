@@ -3,8 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs, doc, setDoc, addDoc } from "firebase/firestore";
-import * as Papa from "papaparse";
-import * as fs from 'fs';
+import { allQuestions } from triviaQuestions.js;
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -25,34 +24,13 @@ const db = getFirestore(app);
 
 console.log('Hello World! (index.js)');
 
-var myButtons = document.getElementsByClassName("btn");
-
-function ingest() {
-    // Convert csv into json
-    const myCSV = fs.readFileSync("./triviaQuestionsTest.csv");
-    var count = 0;
-    Papa.parse(myCSV, {
-        worker: true,
-        step: function(result) {
-            // do stuff with the result
-            console.log(result);
-        },
-        complete: function(results, file) {
-            console.log('parsing complete read', count, 'records.');
-        }
-    });
-
-    setDoc(myDocument, myDocumentBody);
-    console.log('Added document!');
-};
-
-for (var i = 0; i < myButtons.length; i++) {
-    myButtons[i].addEventListener('click', ingest, false);
+for (var i = 0; i < allQuestions.length; i++) {
+    console.log(allQuestions[i])
 }
 
-const docRef = await addDoc(collection(db, "questions"), {
-    question: "What is 1 + 1?",
-    answer: "2"
-});
+// const docRef = await addDoc(collection(db, "questions"), {
+//     question: "What is 1 + 1?",
+//     answer: "2"
+// });
 
-console.log("Document written with ID: ", docRef.id);
+// console.log("Document written with ID: ", docRef.id);
