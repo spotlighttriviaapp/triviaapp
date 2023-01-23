@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs, doc, setDoc, addDoc } from "firebase/firestore";
-import { allQuestions } from 'triviaQuestions.js';
+import { allQuestions } from './triviaQuestions.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
