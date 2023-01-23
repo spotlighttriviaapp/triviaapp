@@ -53,6 +53,8 @@ function ingest() {
     console.log('Added document!');
 };
 
+
+
 for (var i = 0; i < myButtons.length; i++) {
     myButtons[i].addEventListener('click', ingest, false);
 }
