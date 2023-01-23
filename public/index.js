@@ -4,7 +4,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs, doc, setDoc, addDoc } from "firebase/firestore";
 import * as Papa from "papaparse";
-// import fs from 'fs';
+import * as fs from 'fs';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
