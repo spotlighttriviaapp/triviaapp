@@ -25,8 +25,8 @@ const db = getFirestore(app);
 console.log('Hello World! (index.js)');
 
 for (var i = 0; i < allQuestions.length; i++) {
-    console.log(allQuestions[i])
-}
+    console.log(allQuestions[i]);
+};
 
 // const docRef = await addDoc(collection(db, "questions"), {
 //     question: "What is 1 + 1?",
