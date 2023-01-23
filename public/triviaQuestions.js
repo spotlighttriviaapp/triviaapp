@@ -1,4 +1,4 @@
-allQuestions = [
+var allQuestions = [
     {
       "Category": "Q&A",
       "Sub Category": "Fashion",
