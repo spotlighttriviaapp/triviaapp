@@ -2,13 +2,7 @@ const path = require('path');
 
 module.exports = {
   experiments: {
-    asyncWebAssembly: true,
-    buildHttp: true,
-    layers: true,
-    lazyCompilation: true,
-    outputModule: true,
-    syncWebAssembly: true,
-    topLevelAwait: true,
+    topLevelAwait: true
   },
   // The entry point file described above
   entry: './public/index.js',
