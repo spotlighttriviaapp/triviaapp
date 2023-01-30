@@ -1,21 +1,32 @@
 {
-  "dependencies": {
-    "firebase": "^9.15.0"
-  },
   "name": "triviaapp",
-  "version": "1.0.0",
-  "description": "Trivia App",
-  "main": "index.html",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "webpack --mode=development"
+    "serve": "firebase emulators:start",
+    "dev": "next dev",
+    "deploy": "firebase deploy --only hosting",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint ."
   },
-  "keywords": [
-    "Trivia"
-  ],
-  "author": "Laser Quail",
-  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
   "devDependencies": {
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+    "@next/font": "^13.1.6",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "eslint": "^8.33.0",
+    "eslint-config-next": "^13.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "firebase-tools": "^11.21.0",
+    "prettier": "^2.8.3",
+    "typescript": "4.9.4"
   }
 }
