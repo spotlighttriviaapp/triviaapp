@@ -6,7 +6,8 @@
         "source": "**/**",
         "function": "nextjs-server"
       }
-    ]
+    ],
+    "cleanUrls": true
   },
   "functions": {
     "source": ".",
