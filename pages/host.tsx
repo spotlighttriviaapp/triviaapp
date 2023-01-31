@@ -9,10 +9,7 @@ export default function Host() {
           Spotlight Trivia
         </h1>
         <div className="bg-slate-200 px-8 py-3">
-          Go to →
-          <Link href="/" className="pl-8 underline">
-            Home
-          </Link>
+          <text className="text-slate-500">Go to → </text>
           <Link href="/admin" className="pl-6 underline">
             Admin
           </Link>
@@ -20,7 +17,7 @@ export default function Host() {
           <Link href="/viewer" className="pl-6 underline">
             Viewer
           </Link>
-          <Link href="/play" className="pl-6 underline">
+          <Link href="/" className="pl-6 underline">
             Player
           </Link>
         </div>

@@ -10,7 +10,6 @@ export default function Home() {
         </h1>
         <div className="bg-slate-200 px-8 py-3">
           <text className="text-slate-500">Go to → </text>
-          <text className="pl-6 font-bold">Home</text>
           <Link href="/admin" className="pl-6 underline">
             Admin
           </Link>
@@ -20,12 +19,13 @@ export default function Home() {
           <Link href="/viewer" className="pl-6 underline">
             Viewer
           </Link>
-          <Link href="/play" className="pl-6 underline">
-            Player
-          </Link>
+          <text className="pl-6 font-bold">Player</text>
         </div>
       </div>
       <hr />
+      <div className="pt-12 pl-8">
+        Hey Denise, this site will always be live for your checking.
+      </div>
     </PageWrapper>
   )
 }
