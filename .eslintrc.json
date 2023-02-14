@@ -1,13 +1,9 @@
 {
-  "plugins": ["@typescript-eslint", "tailwindcss"],
+  "plugins": ["tailwindcss"],
   "extends": [
     "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:tailwindcss/recommended"
   ],
-  "rules": {
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
-  }
+  "rules": {}
 }

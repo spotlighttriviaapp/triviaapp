@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion'
 
-interface Props {
-  children: React.ReactNode
-}
-
-export default function PageWrapper({ children }: Props) {
+export default function PageWrapper({ children }) {
   return (
     <div className="h-full">
       <motion.main

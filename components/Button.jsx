@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion'
 
-interface Props {
-  text: string
-}
-
-export default function Button({ text }: Props) {
+export default function Button({ text }) {
   return (
     <motion.button
       className="
