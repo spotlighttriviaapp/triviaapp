@@ -1,25 +1,9 @@
-// import Link from 'next/link'
-import PageWrapper from "@/components/pageWrapper";
-// import getHosts from "@/hooks/db";
+import PageWrapper from "@/components/PageWrapper";
 
-export default function Hosts() {
-  // const hostName = await getHosts();
-  const value = "Hosts";
-
+export default function ManageHosts() {
   return (
     <PageWrapper>
-      <h1 className="m-8 pb-24 text-lg font-bold">
-        Admin/Hosts Management Page /
-      </h1>
-      <h2>{value}</h2>
+      <h1 className="m-8 pb-24 text-lg font-bold">Manage: Hosts /</h1>
     </PageWrapper>
   );
 }
-
-// const user = await db.collection('users').doc('leerob').get();
-
-// if (!user.exists) {
-//   notFound();
-// }
-
-// return <div>Hello, {user.data().name}!</div>;
