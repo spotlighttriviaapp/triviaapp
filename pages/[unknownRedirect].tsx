@@ -5,7 +5,7 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-export default function AnySlug() {
+export default function RedirectUnknownSlug() {
   const router = useRouter()
 
   useEffect(() => {
