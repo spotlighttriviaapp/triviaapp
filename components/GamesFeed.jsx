@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function TriviaGames({ games }) {
+export default function GamesFeed({ games }) {
   return games ? games.map((game) => <TriviaGame game={game} />) : null;
 }
 
