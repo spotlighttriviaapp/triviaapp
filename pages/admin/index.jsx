@@ -1,33 +1,26 @@
-import PageWrapper from "@/components/PageWrapper";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Admin() {
-  // --------------------------------------------
+import PageWrapper from "@/components/PageWrapper";
+import TriviaGames from "@/components/TriviaGames";
+import { getAllDocuments } from "@/lib/firebase";
 
-  // Example for generating a random number
-  // and navigating to a page with that number
-  // as a parameter. The useEffect is used to
-  // generate the random number only once and
-  // allow for hydration of the page.
-  const [triviaID, setTriviaID] = useState("");
+// This method tells what data we need from the server before the page is rendered.
+// The server gets the data, compiles it and then gives it to the components before it is rendered.
+// This is Server Side Rendering.
+export async function getServerSideProps() {
+  const games = await getAllDocuments("games");
 
-  function generateRandomInteger(max) {
-    return Math.floor(Math.random() * max) + 1;
-  }
+  return {
+    props: { games }, // will be passed to the page component as props
+  };
+}
 
-  useEffect(() => {
-    setTriviaID(generateRandomInteger(1000000000).toString());
-  }, []);
-
-  // --------------------------------------------
-
+export default function Admin({ games }) {
   return (
     <PageWrapper>
-      <h1 className="m-8 pb-24 text-lg font-bold">Portal: Admin /</h1>
-      <Link href={`/admin/trivia-games/view/${triviaID}`} className="underline">
-        {triviaID}
-      </Link>
+      <h1 className="m-8 pb-24 text-lg font-bold">Admin</h1>
+      <TriviaGames games={games} />
     </PageWrapper>
   );
 }
