@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import superjson from "superjson";
 
-import PageWrapper from "@/components/PageWrapper";
+import PageWrapper from "../../components/PageWrapper";
 import GamesFeed from "@/components/GamesFeed";
 import Loader from "@/components/Loader";
 import {
