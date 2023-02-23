@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function GamesFeed({ games }) {
   console.log(games);
   if (games) {
