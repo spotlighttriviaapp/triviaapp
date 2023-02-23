@@ -1,14 +1,19 @@
 import Link from "next/link";
 
 export default function GamesFeed({ games }) {
-  return games ? games.map((game) => <TriviaGame game={game} />) : null;
+  console.log(games);
+  if (games) {
+    return games.map((game) => <TriviaGame game={game} key={game.id} />);
+  } else {
+    return null;
+  }
 }
 
 function TriviaGame({ game }) {
   return (
-    <div>
+    <div key={game.id}>
       <p>name: {game.name}</p>
-      <p>date: {game.date}</p>
+      <p>id: {game.id}</p>
       <p>type: {game.type}</p>
       <p>style: {game.style}</p>
       <p>readystatus: {game.readystatus}</p>

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 export default function PageWrapper({ children }) {
   return (
@@ -12,5 +12,5 @@ export default function PageWrapper({ children }) {
         {children}
       </motion.main>
     </div>
-  )
+  );
 }
