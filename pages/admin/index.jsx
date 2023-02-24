@@ -25,7 +25,7 @@ export default function Admin(props) {
 
   return (
     <PageWrapper>
-      <h1 className="m-8 pb-24 text-lg font-bold">Admin</h1>
+      <h1 className="m-8 pb-24 text-lg font-bold">Admin: LOGGED IN</h1>
       <GamesFeed games={games} key="gamesfeed" />
     </PageWrapper>
   );

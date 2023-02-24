@@ -9,6 +9,6 @@ export default function AnySlug() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/play");
+    router.replace("/");
   }, [router]);
 }
