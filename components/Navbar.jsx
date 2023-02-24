@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import { GiGears, GiHamburgerMenu } from 'react-icons/gi'
-import React from 'react'
-import { useRouter } from 'next/router'
+import Link from "next/link";
+import { GiGears, GiHamburgerMenu } from "react-icons/gi";
+import React from "react";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
-  const router = useRouter()
-  const slug = router.pathname
-  const parentRoute = '/' + slug.split('/')[1]
-  const isAdmin = () => (parentRoute === '/admin' ? true : false)
+  const router = useRouter();
+  const slug = router.pathname;
+  const parentRoute = "/" + slug.split("/")[1];
+  const isAdmin = () => (parentRoute === "/admin" ? true : false);
 
   return (
     <nav className="flex w-full items-center justify-between bg-black p-4 align-middle">
@@ -37,12 +37,12 @@ export default function Navbar() {
               </Link>
             </ul>
             <ul className="hidden lg:block">
-              <Link href={parentRoute + `/games/new`}>
+              <Link href={parentRoute + `/trivia-games/new`}>
                 <h4>Create New Trivia Game</h4>
               </Link>
             </ul>
             <ul className="hidden lg:block">
-              <Link href={parentRoute + `/account/`}>
+              <Link prefetch={false} href={parentRoute + `/my-account`}>
                 <h4>Account</h4>
               </Link>
             </ul>
@@ -54,5 +54,5 @@ export default function Navbar() {
         </>
       ) : null}
     </nav>
-  )
+  );
 }

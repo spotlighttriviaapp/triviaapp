@@ -101,7 +101,7 @@ export const spawnVariants = {
     opacity: 0,
     y: -20,
   },
-  visible: (delay: number) => ({
+  visible: (delay) => ({
     opacity: 1,
     y: 0,
     transition: {
