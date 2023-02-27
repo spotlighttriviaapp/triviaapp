@@ -1,32 +1,20 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import superjson from "superjson";
+import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import PageWrapper from "@/components/PageWrapper";
-import GamesFeed from "@/components/GamesFeed";
-import Loader from "@/components/Loader";
-import {
-  getGames,
-  getNextGames,
-  onSnapshot,
-  collection,
-  db,
-} from "@/lib/firebase";
+import GamesList from "@/components/GamesList";
+
+import { onSnapshot, collection, db } from "@/lib/firebase";
 
 export default function Admin(props) {
-  const [games, setGames] = useState([]);
-  useEffect(
-    () =>
-      onSnapshot(collection(db, "games"), (snapshot) =>
-        setGames(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-      ),
-    []
-  );
+  // Get all games data
+  const gamesRef = collection(db, "games");
+  const [games] = useCollectionData(gamesRef);
 
   return (
     <PageWrapper>
       <h1 className="m-8 pb-24 text-lg font-bold">Admin</h1>
-      <GamesFeed games={games} key="gamesfeed" />
+      <GamesList games={games} />
     </PageWrapper>
   );
 }
