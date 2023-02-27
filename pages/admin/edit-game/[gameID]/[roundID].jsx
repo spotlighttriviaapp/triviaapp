@@ -1,32 +1,35 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import {
   useCollectionData,
   useDocumentData,
 } from "react-firebase-hooks/firestore";
 import { db, doc, collection, onSnapshot } from "@/lib/firebase";
 import PageWrapper from "@/components/PageWrapper";
-import RoundsList from "@/components/RoundsList";
-import GameDetails from "@/components/GameDetails";
-
-export default function EditGame() {
-  // Get the gameID from the query
+import QuestionList from "@/components/QuestionList";
+export default function EditRound() {
+  // Get the gameID and roundID from the query
   const router = useRouter();
-  const { gameID } = router.query;
+  const { gameID, roundID } = router.query;
   const gameIDstr = `${gameID}`;
+  const roundIDstr = `${roundID}`;
 
   // Get the game data
   const gameRef = doc(db, "games", gameIDstr);
   const [game] = useDocumentData(gameRef);
 
   // Get the round data
-  const roundsRef = collection(db, "games", gameIDstr, "rounds");
-  const [rounds] = useCollectionData(roundsRef);
+  const roundRef = doc(db, "games", gameIDstr, "rounds", roundIDstr);
+  const [round] = useDocumentData(roundRef);
 
   return (
     <PageWrapper>
-      {game && <GameDetails game={game} />}
-      {rounds && <RoundsList game={game} rounds={rounds} />}
+      {round && (
+        <QuestionList
+          game={game}
+          round={round}
+          questionRefs={round.questions}
+        />
+      )}
     </PageWrapper>
   );
 }
