@@ -2,12 +2,15 @@ import Link from "next/link";
 import { GiGears, GiHamburgerMenu } from "react-icons/gi";
 import React from "react";
 import { useRouter } from "next/router";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/lib/firebase";
 
 export default function Navbar() {
   const router = useRouter();
   const slug = router.pathname;
   const parentRoute = "/" + slug.split("/")[1];
   const isAdmin = () => (parentRoute === "/admin" ? true : false);
+  const [user] = useAuthState(auth);
 
   return (
     <nav className="flex w-full items-center justify-between bg-black p-4 align-middle">
@@ -18,7 +21,7 @@ export default function Navbar() {
         </h1>
       </Link>
 
-      {isAdmin() ? (
+      {isAdmin() && user ? (
         <>
           <li className="flex items-center justify-center space-x-7 align-middle text-white">
             <ul className="hidden lg:block">
