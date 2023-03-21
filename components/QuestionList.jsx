@@ -9,14 +9,14 @@ export default function QuestionList({ game, round, questionRefs }) {
     const questions = questionRefs.map(useDocumentData);
     console.log("Questions:");
     console.log(questions);
-    return questions.map((question) => (
+    return questions.map((question, index) => (
       <>
         {question && (
           <Question
             game={game}
             round={round}
             question={question[0]}
-            key={question.id}
+            key={toString(index)}
           />
         )}
       </>
