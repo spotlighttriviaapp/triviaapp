@@ -1,21 +1,25 @@
 import Link from "next/link";
-import Button from "@/components/Button";
+import { db, doc } from "@/lib/firebase";
+import { useDocumentData } from "react-firebase-hooks/firestore";
 
-export default function Question({ game, round, question, key }) {
-  console.log("Question:");
-  console.log(question);
-  console.log("key:");
-  console.log(key);
+export default function Question({ game, round, question }) {
+  // Get the question data
+  const [questionData] = useDocumentData(question.questionRef);
+
   return (
-    question && (
+    questionData && (
       <>
-        <p>question: {question["Question"]}</p>
-        <p>answer: {question["correct answer"]}</p>
-        <p>key: {key}</p>
+        <p>key: {question.id}</p>
+        <p>question: {questionData["Question"]}</p>
+        <p>answer: {questionData["correct answer"]}</p>
         <Link
           href={{
             pathname: "/admin/edit-game/[gameID]/[roundID]/[questionID]",
-            query: { gameID: game.id, roundID: round.id, questionID: key },
+            query: {
+              gameID: game.id,
+              roundID: round.id,
+              questionID: question.id,
+            },
           }}
         >
           Edit
