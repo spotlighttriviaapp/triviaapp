@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import {
   useCollectionData,
   useDocumentData,
 } from "react-firebase-hooks/firestore";
-import { db, doc, collection, onSnapshot } from "@/lib/firebase";
+import { db, doc, collection } from "@/lib/firebase";
 import PageWrapper from "@/components/PageWrapper";
 import RoundsList from "@/components/RoundsList";
 import GameDetails from "@/components/GameDetails";

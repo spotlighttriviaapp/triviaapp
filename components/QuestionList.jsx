@@ -3,7 +3,6 @@ import {
   useDocumentData,
 } from "react-firebase-hooks/firestore";
 import Question from "@/components/Question";
-import { useState, useEffect } from "react";
 
 export default function QuestionList({ game, round, questions }) {
   if (questions) {

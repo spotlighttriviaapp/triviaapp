@@ -14,7 +14,6 @@ export default function Footer() {
         . All Rights Reserved.
       </span>
       <ul className="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-        ponent
         <li>
           <Link href="/admin" className="mr-4 hover:underline md:mr-6 ">
             Admin

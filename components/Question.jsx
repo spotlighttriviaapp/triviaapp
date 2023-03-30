@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { db, doc } from "@/lib/firebase";
 import { useDocumentData } from "react-firebase-hooks/firestore";
 
 export default function Question({ game, round, question }) {

@@ -1,12 +1,9 @@
 import { useRouter } from "next/router";
-import {
-  useCollectionData,
-  useDocumentData,
-} from "react-firebase-hooks/firestore";
-import { db, doc, collection, onSnapshot } from "@/lib/firebase";
+import { useDocumentData } from "react-firebase-hooks/firestore";
+import { db, doc } from "@/lib/firebase";
 import PageWrapper from "@/components/PageWrapper";
 import CurrentQuestion from "@/components/CurrentQuestion";
-import SearchQuestions from "@/components/SearchQuestions";
+import QuestionSearch from "@/components/QuestionSearch";
 
 export default function pickQuestion() {
   // Get the gameID, roundID, and questionID from the query
@@ -51,7 +48,7 @@ export default function pickQuestion() {
             key={question.id}
           />
         )}
-        <SearchQuestions />
+        <QuestionSearch searchString={"this"} />
       </>
     </PageWrapper>
   );
