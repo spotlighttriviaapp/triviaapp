@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 import PageWrapper from "@/components/PageWrapper";

@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import {
   useCollectionData,
   useDocumentData,
 } from "react-firebase-hooks/firestore";
-import { db, doc, collection, onSnapshot } from "@/lib/firebase";
+import { db, doc, collection } from "@/lib/firebase";
 import PageWrapper from "@/components/PageWrapper";
 import RoundsList from "@/components/RoundsList";
+import GameDetails from "@/components/GameDetails";
 
 export default function EditGame() {
   // Get the gameID from the query
@@ -27,21 +27,5 @@ export default function EditGame() {
       {game && <GameDetails game={game} />}
       {rounds && <RoundsList game={game} rounds={rounds} />}
     </PageWrapper>
-  );
-}
-
-function GameDetails({ game }) {
-  return (
-    game && (
-      <>
-        <p>id: {game.id}</p>
-        <p>name: {game.name}</p>
-        <p>type: {game.type}</p>
-        <p>style: {game.style}</p>
-        <p>date: {game.date.toDate().toDateString()}</p>
-        <p>readystatus: {game.readystatus.toString()}</p>
-        <br />
-      </>
-    )
   );
 }
